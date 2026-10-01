@@ -7,13 +7,144 @@
 </head>
 <body>
     <header>
-        <h1>AutoChronic</h1>
+        <a href = "index.html">
+            <img src = "assets/images/Logo.png" alt = "Логотип AutoChronic" width = "64" height = "64">
+        </a>
+        <nav aria-label = "Навигация">
+            <ul>
+                <li><a href = "#">"История"</a></li>
+                <li><a href = "#">"Бренды"</a></li>
+                <li><a href = "#">"Статистика"</a></li>
+            </ul>
+        </nav>
+        <a href = "#">"Войти"</a>
+
     </header>
+
+        <div class="auth-overlay">
+        <!-- Форма Входа -->
+        <section id="login-section" aria-labelledby="login-heading">
+            <h2 id="login-heading">Вход в аккаунт</h2>
+            <form action="/login-endpoint" method="POST">
+                <div>
+                    <label for="login-username">Логин или Email:</label>
+                    <input type="text" id="login-username" name="username" required autocomplete="username">
+                </div>
+                <div>
+                    <label for="login-password">Пароль:</label>
+                    <input type="password" id="login-password" name="password" required autocomplete="current-password">
+                </div>
+                <button type="submit">Войти</button>
+            </form>
+        </section>
+
+        <!-- Форма Регистрации -->
+        <section id="register-section" aria-labelledby="register-heading">
+            <h2 id="register-heading">Регистрация</h2>
+            <form action="/register-endpoint" method="POST">
+                <div>
+                    <label for="register-username">Придумайте логин:</label>
+                    <input type="text" id="register-username" name="username" required autocomplete="username">
+                </div>
+                <div>
+                    <label for="register-password">Придумайте пароль:</label>
+                    <input type="password" id="register-password" name="password" required autocomplete="new-password">
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </section>
+    </div>
     <main>
-        <p>Стартовая страница. Тут будет интерфейс приложения</p>
+        <section aria-labelledby = "hero-title">
+            <span>[ 01 ] - добро пожаловать в хроники</span> 
+            <h1 id="hero-title">AutoChronic - История автомобилестроения в деталях</h1>
+            <p>Интерактивная платформа, объединяющая эпохи, легендарные бренды, технические чертежи и редкие исторические факты. Откройте для себя эволюцию скоростных машин от паровых экипажей до электрокаров.</p>
+            <a href = "#">"Перейти к статьям"</a>
+        </section>
+
+        <section aria-labelledby = "brand-titles">
+            <span>[ 02 ] - Легендарные производители</span>
+            <h2 id="brand-titles">Великие марки, изменившие мир</h2>
+            <p>Исследуйте подробный путь развития каждого бренда, их ключевые триумфы и архивные линейки моделей.</p>
+            <!--в будущем добавить иконки брендов -->
+            <div>
+                <article>
+                    <h3>Mercedes-Benz</h3>
+                    <p>EST. 1926</p>
+                </article>
+                <article>
+                    <h3>BMW</h3>
+                    <p>EST. 1916</p>
+                </article>
+                <article>
+                    <h3>Porsche</h3>
+                    <p>EST. 1931</p>
+                </article>
+                <article>
+                    <h3>Ferrari</h3>
+                    <p>EST. 1939</p>
+                </article>
+                <article>
+                    <h3>Toyota</h3>
+                    <p>EST. 1937</p>
+                </article>
+                <article>
+                    <h3>Ford</h3>
+                    <p>EST. 1903</p>
+                </article>
+            </div>
+        </section>
+        
+        <section aria-labelledby = "timeline-title">
+            <span>[ 03 ] - Хронология эволюции</span>
+            <h2 id="timeline-title">Ключевые вехи автомобильной истории</h2>
+            <p>Пройдите сквозь столетие инноваций с помощью нашей интерактивной таймлайн-карты, запечатлевшей важнейшие прорывы индустрии.</p>
+            <div>
+                <article>
+                    <h3>1886</h3>
+                    <p>Benz Patent-Motorwagen — первый в мире бензиновый автомобиль Карла Бенца с одноцилиндровым двигателем внутреннего сгорания.</p>
+                </article>
+                <article>
+                    <h3>1908</h3>
+                    <p>Ford Model T — первый массовый и доступный автомобиль конвейерной сборки, буквально поставивший мир на колёса.</p>
+                </article>
+                <article>
+                    <h3>1961</h3>
+                    <p>Jaguar E-Type — сенсация автосалона в Женеве. Энцо Феррари назвал его самым красивым автомобилем из когда-либо созданных.</p>
+                </article>
+                <article>
+                    <h3>1997</h3>
+                    <p>Toyota Prius — запуск эпохи экологичного транспорта и первого массового серийного гибридного автомобиля.</p>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby = "community-title">
+            <span>[ 04 ] - Мнение сообщества</span>
+            <h2 id="community-title">Что говорят автолюбители</h2>
+            <article>
+                <h3>«Платформа — настоящий шедевр для историков. Аналитические чарты и редкие факты о довоенных спорткарах затянули меня на часы.»</h3>
+                <p>Александр В., Коллекционер классики</p>
+            </article>
+            <article>
+                <h3>«Отличная визуализация данных. Наконец-то в одном месте собран структурированный каталог с настолько точными ТТХ машин.»</h3>
+                <p>Мария К., Автомобильный журналист</p>
+            </article>
+        </section>
     </main>
     <footer>
+        <div>
+            <p>AutoChronic</p>
+            <p>Проект создан для сохранения и популяризации истории автомобильной промышленности, великих инженеров и легендарных изобретений.</p>   
+        </div>
         <p>© 2026 AutoChronic. Все права защищены.</p>
     </footer>
 </body>
 </html>
+
+
+<!--добавить адаптив в фигму
+придумать действия для залогиненных пользователей
+добавить форму для регистрации через display none-->
+
+
