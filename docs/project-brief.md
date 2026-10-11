@@ -29,3 +29,8 @@ AutoChronic - интерактивная веб-платформа, систем
 
 
 На практике №2 реализуется только смысловая структура и HTML.
+
+## Ссылка на макет главной страницы
+
+
+https://www.figma.com/design/yQnBKRlrYbj1aLvD0mEUY6/Untitled?node-id=0-1&t=wvJnIWFWMsF1XRys-1

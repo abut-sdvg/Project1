@@ -12,46 +12,94 @@
         </a>
         <nav aria-label = "Навигация">
             <ul>
-                <li><a href = "#">"История"</a></li>
-                <li><a href = "#">"Бренды"</a></li>
-                <li><a href = "#">"Статистика"</a></li>
+                <li><a href = "#history">История</a></li>
+                <li><a href = "#brands">Бренды</a></li>
+                <li><a href = "#statistics">Статистика</a></li>
             </ul>
         </nav>
-        <a href = "#">"Войти"</a>
+        <button type="button" id="open-auth" >Войти</button>
 
     </header>
 
-        <div class="auth-overlay">
+    <div class="auth-overlay">
         <!-- Форма Входа -->
         <section id="login-section" aria-labelledby="login-heading">
-            <h2 id="login-heading">Вход в аккаунт</h2>
+            <h2 id="login-heading">Вход в AutoChronic</h2>
+            <p>Вернитесь к любимым моделям и продолжите исследовать историю автомобилей.</p>
+ 
             <form action="/login-endpoint" method="POST">
                 <div>
-                    <label for="login-username">Логин или Email:</label>
-                    <input type="text" id="login-username" name="username" required autocomplete="username">
+                    <label for="login-email">Электронная почта</label>
+                    <input type="email" id="login-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
                 </div>
+ 
                 <div>
-                    <label for="login-password">Пароль:</label>
-                    <input type="password" id="login-password" name="password" required autocomplete="current-password">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" name="password" placeholder="Введите пароль" required autocomplete="current-password">
                 </div>
+ 
+                <div>
+                    <input type="checkbox" id="login-show-password">
+                    <label for="login-show-password">Показать пароль</label>
+                </div>
+ 
+                <div>
+                    <input type="checkbox" id="login-remember" name="remember">
+                    <label for="login-remember">Запомнить меня</label>
+                    <a href="#">Забыли пароль?</a>
+                </div>
+ 
                 <button type="submit">Войти</button>
             </form>
+ 
+            <p>Нет аккаунта? <a href="#register-section">Зарегистрироваться</a></p>
         </section>
-
+ 
         <!-- Форма Регистрации -->
         <section id="register-section" aria-labelledby="register-heading">
-            <h2 id="register-heading">Регистрация</h2>
+            <h2 id="register-heading">Создать аккаунт</h2>
+            <p>Сохраняйте редкие находки и собирайте свою коллекцию автомобильной истории.</p>
+ 
             <form action="/register-endpoint" method="POST">
                 <div>
-                    <label for="register-username">Придумайте логин:</label>
-                    <input type="text" id="register-username" name="username" required autocomplete="username">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
                 </div>
+ 
                 <div>
-                    <label for="register-password">Придумайте пароль:</label>
-                    <input type="password" id="register-password" name="password" required autocomplete="new-password">
+                    <label for="register-email">Электронная почта</label>
+                    <input type="email" id="register-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
                 </div>
+ 
+                <div>
+                    <label for="register-password">Пароль</label>
+                    <input type="password" id="register-password" name="password" placeholder="Придумайте пароль" required autocomplete="new-password" minlength="8">
+                    <button type="button" aria-label="Показать пароль">
+                       <img src="assets/images/eye.png" alt="" width="16" height="16">
+                    </button>
+                    <p>Не менее 8 символов, включая буквы и цифры.</p>
+                </div>
+ 
+                <div>
+                    <label for="register-password-confirm">Подтверждение пароля</label>
+                    <input type="password" id="register-password-confirm" name="password_confirm" placeholder="Повторите пароль" required autocomplete="new-password" minlength="8">
+                    <button type="button" aria-label="Показать пароль">
+                       <img src="assets/images/eye.png" alt="" width="16" height="16">
+                    </button>
+                </div>
+ 
+                <div>
+                    <input type="checkbox" id="register-agreement" name="agreement" required>
+                    <label for="register-agreement">
+                        Я соглашаюсь с <a href="#Rules">условиями использования</a>
+                        и <a href="#Privacy">политикой конфиденциальности</a>.
+                    </label>
+                </div>
+ 
                 <button type="submit">Зарегистрироваться</button>
             </form>
+ 
+            <p>Уже есть аккаунт? <a href="#login-section">Войти</a></p>
         </section>
     </div>
     <main>
@@ -59,7 +107,7 @@
             <span>[ 01 ] - добро пожаловать в хроники</span> 
             <h1 id="hero-title">AutoChronic - История автомобилестроения в деталях</h1>
             <p>Интерактивная платформа, объединяющая эпохи, легендарные бренды, технические чертежи и редкие исторические факты. Откройте для себя эволюцию скоростных машин от паровых экипажей до электрокаров.</p>
-            <a href = "#">"Перейти к статьям"</a>
+            <a href = "#articles">Перейти к статьям</a>
         </section>
 
         <section aria-labelledby = "brand-titles">
@@ -123,12 +171,12 @@
             <span>[ 04 ] - Мнение сообщества</span>
             <h2 id="community-title">Что говорят автолюбители</h2>
             <article>
-                <h3>«Платформа — настоящий шедевр для историков. Аналитические чарты и редкие факты о довоенных спорткарах затянули меня на часы.»</h3>
-                <p>Александр В., Коллекционер классики</p>
+                <p>«Платформа — настоящий шедевр для историков. Аналитические чарты и редкие факты о довоенных спорткарах затянули меня на часы.»</p>
+                <h3>Александр В., Коллекционер классики</h3>
             </article>
             <article>
-                <h3>«Отличная визуализация данных. Наконец-то в одном месте собран структурированный каталог с настолько точными ТТХ машин.»</h3>
-                <p>Мария К., Автомобильный журналист</p>
+                <p>«Отличная визуализация данных. Наконец-то в одном месте собран структурированный каталог с настолько точными ТТХ машин.»</p>
+                <h3>Мария К., Автомобильный журналист</h3>
             </article>
         </section>
     </main>
