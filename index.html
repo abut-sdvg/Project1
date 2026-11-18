@@ -1,200 +1,241 @@
 <!DOCTYPE html>
-<html lang = "ru">
+<html lang="ru">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoChronic</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href = "index.html">
-            <img src = "assets/images/Logo.png" alt = "Логотип AutoChronic" width = "64" height = "64">
-        </a>
-        <nav aria-label = "Навигация">
-            <ul>
-                <li><a href = "history.html">История</a></li>
-                <li><a href = "brands.html">Бренды</a></li>
-                <li><a href = "statistics.html">Статистика</a></li>
-            </ul>
-        </nav>
-        <button type="button" id="open-auth" >Войти</button>
-
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-header__logo" href="index.html">
+                <img src="assets/images/Logo.png" alt="Логотип AutoChronic" width="64" height="64">
+            </a>
+            <nav class="main-nav" aria-label="Навигация">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item"><a class="main-nav__link" href="history.html">История</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="brands.html">Бренды</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="statistics.html">Статистика</a></li>
+                </ul>
+            </nav>
+            <button class="site-header__login" type="button" id="open-auth">Войти</button>
+        </div>
     </header>
 
     <div class="auth-overlay" style="display: none">
         <!-- Форма Входа -->
-        <section id="login-section" aria-labelledby="login-heading" style="display: none">
-            <h2 id="login-heading">Вход в AutoChronic</h2>
-            <p>Вернитесь к любимым моделям и продолжите исследовать историю автомобилей.</p>
- 
+        <section id="login-section" class="auth-form" aria-labelledby="login-heading" style="display: none">
+            <h2 id="login-heading" class="auth-form__title">Вход в AutoChronic</h2>
+            <p class="auth-form__lead">Вернитесь к любимым моделям и продолжите исследовать историю автомобилей.</p>
+
             <form action="/login-endpoint" method="POST">
-                <div>
-                    <label for="login-email">Электронная почта</label>
-                    <input type="email" id="login-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="login-email">Электронная почта</label>
+                    <input class="auth-form__input" type="email" id="login-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
                 </div>
- 
-                <div>
-                    <label for="login-password">Пароль</label>
-                    <input type="password" id="login-password" name="password" placeholder="Введите пароль" required autocomplete="current-password">
+
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="login-password">Пароль</label>
+                    <input class="auth-form__input" type="password" id="login-password" name="password" placeholder="Введите пароль" required autocomplete="current-password">
                 </div>
- 
-                <div>
+
+                <div class="auth-form__checkbox-field">
                     <input type="checkbox" id="login-show-password">
                     <label for="login-show-password">Показать пароль</label>
                 </div>
- 
-                <div>
+
+                <div class="auth-form__checkbox-field">
                     <input type="checkbox" id="login-remember" name="remember">
                     <label for="login-remember">Запомнить меня</label>
                     <a href="forgot-password.html">Забыли пароль?</a>
                 </div>
- 
-                <button type="submit">Войти</button>
+
+                <button class="button button--primary" type="submit">Войти</button>
             </form>
- 
-            <p>Нет аккаунта? <a href="#register-section">Зарегистрироваться</a></p>
+
+            <p class="auth-form__switch">Нет аккаунта? <a href="#register-section">Зарегистрироваться</a></p>
         </section>
- 
+
         <!-- Форма Регистрации -->
-        <section id="register-section" aria-labelledby="register-heading" style="display: none">
-            <h2 id="register-heading">Создать аккаунт</h2>
-            <p>Сохраняйте редкие находки и собирайте свою коллекцию автомобильной истории.</p>
- 
+        <section id="register-section" class="auth-form" aria-labelledby="register-heading" style="display: none">
+            <h2 id="register-heading" class="auth-form__title">Создать аккаунт</h2>
+            <p class="auth-form__lead">Сохраняйте редкие находки и собирайте свою коллекцию автомобильной истории.</p>
+
             <form action="/register-endpoint" method="POST">
-                <div>
-                    <label for="register-name">Имя</label>
-                    <input type="text" id="register-name" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="register-name">Имя</label>
+                    <input class="auth-form__input" type="text" id="register-name" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
                 </div>
- 
-                <div>
-                    <label for="register-email">Электронная почта</label>
-                    <input type="email" id="register-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
+
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="register-email">Электронная почта</label>
+                    <input class="auth-form__input" type="email" id="register-email" name="email" placeholder="Введите ваш email" required autocomplete="email">
                 </div>
- 
-                <div>
-                    <label for="register-password">Пароль</label>
-                    <input type="password" id="register-password" name="password" placeholder="Придумайте пароль" required autocomplete="new-password" minlength="8">
-                    <button type="button" aria-label="Показать пароль">
+
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="register-password">Пароль</label>
+                    <input class="auth-form__input" type="password" id="register-password" name="password" placeholder="Придумайте пароль" required autocomplete="new-password" minlength="8">
+                    <button class="auth-form__toggle" type="button" aria-label="Показать пароль">
                        <img src="assets/images/eye.png" alt="" width="16" height="16">
                     </button>
-                    <p>Не менее 8 символов, включая буквы и цифры.</p>
+                    <p class="auth-form__hint">Не менее 8 символов, включая буквы и цифры.</p>
                 </div>
- 
-                <div>
-                    <label for="register-password-confirm">Подтверждение пароля</label>
-                    <input type="password" id="register-password-confirm" name="password_confirm" placeholder="Повторите пароль" required autocomplete="new-password" minlength="8">
-                    <button type="button" aria-label="Показать пароль">
+
+                <div class="auth-form__field">
+                    <label class="auth-form__label" for="register-password-confirm">Подтверждение пароля</label>
+                    <input class="auth-form__input" type="password" id="register-password-confirm" name="password_confirm" placeholder="Повторите пароль" required autocomplete="new-password" minlength="8">
+                    <button class="auth-form__toggle" type="button" aria-label="Показать пароль">
                        <img src="assets/images/eye.png" alt="" width="16" height="16">
                     </button>
                 </div>
- 
-                <div>
+
+                <div class="auth-form__checkbox-field">
                     <input type="checkbox" id="register-agreement" name="agreement" required>
                     <label for="register-agreement">
                         Я соглашаюсь с <a href="rules.html">условиями использования</a>
                         и <a href="privacy.html">политикой конфиденциальности</a>.
                     </label>
                 </div>
- 
-                <button type="submit">Зарегистрироваться</button>
+
+                <button class="button button--primary" type="submit">Зарегистрироваться</button>
             </form>
- 
-            <p>Уже есть аккаунт? <a href="#login-section">Войти</a></p>
+
+            <p class="auth-form__switch">Уже есть аккаунт? <a href="#login-section">Войти</a></p>
         </section>
     </div>
+
     <main>
-        <section aria-labelledby = "hero-title">
-            <span>[ 01 ] - добро пожаловать в хроники</span> 
-            <h1 id="hero-title">AutoChronic - История автомобилестроения в деталях</h1>
-            <p>Интерактивная платформа, объединяющая эпохи, легендарные бренды, технические чертежи и редкие исторические факты. Откройте для себя эволюцию скоростных машин от паровых экипажей до электрокаров.</p>
-            <a href = "articles.html">Перейти к статьям</a>
-        </section>
-
-        <section aria-labelledby = "brand-titles">
-            <span>[ 02 ] - Легендарные производители</span>
-            <h2 id="brand-titles">Великие марки, изменившие мир</h2>
-            <p>Исследуйте подробный путь развития каждого бренда, их ключевые триумфы и архивные линейки моделей.</p>
-            <!--в будущем добавить иконки брендов -->
-            <div>
-                <article>
-                    <h3>Mercedes-Benz</h3>
-                    <p>EST. 1926</p>
-                </article>
-                <article>
-                    <h3>BMW</h3>
-                    <p>EST. 1916</p>
-                </article>
-                <article>
-                    <h3>Porsche</h3>
-                    <p>EST. 1931</p>
-                </article>
-                <article>
-                    <h3>Ferrari</h3>
-                    <p>EST. 1939</p>
-                </article>
-                <article>
-                    <h3>Toyota</h3>
-                    <p>EST. 1937</p>
-                </article>
-                <article>
-                    <h3>Ford</h3>
-                    <p>EST. 1903</p>
-                </article>
-            </div>
-        </section>
-        
-        <section aria-labelledby = "timeline-title">
-            <span>[ 03 ] - Хронология эволюции</span>
-            <h2 id="timeline-title">Ключевые вехи автомобильной истории</h2>
-            <p>Пройдите сквозь столетие инноваций с помощью нашей интерактивной таймлайн-карты, запечатлевшей важнейшие прорывы индустрии.</p>
-            <div>
-                <article>
-                    <h3>1886</h3>
-                    <p>Benz Patent-Motorwagen — первый в мире бензиновый автомобиль Карла Бенца с одноцилиндровым двигателем внутреннего сгорания.</p>
-                </article>
-                <article>
-                    <h3>1908</h3>
-                    <p>Ford Model T — первый массовый и доступный автомобиль конвейерной сборки, буквально поставивший мир на колёса.</p>
-                </article>
-                <article>
-                    <h3>1961</h3>
-                    <p>Jaguar E-Type — сенсация автосалона в Женеве. Энцо Феррари назвал его самым красивым автомобилем из когда-либо созданных.</p>
-                </article>
-                <article>
-                    <h3>1997</h3>
-                    <p>Toyota Prius — запуск эпохи экологичного транспорта и первого массового серийного гибридного автомобиля.</p>
-                </article>
+        <section class="hero" aria-labelledby="hero-title">
+            <img class="hero__bg" src="assets/images/hero-car.jpg" alt="Красный винтажный спортивный автомобиль на мокрой дороге" width="1600" height="900">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <span class="badge"><span class="badge__index">[ 01 ]</span> — добро пожаловать в хроники</span>
+                    <h1 class="hero__title" id="hero-title">AutoChronic — История автомобилестроения в деталях</h1>
+                    <p class="hero__lead">Интерактивная платформа, объединяющая эпохи, легендарные бренды, технические чертежи и редкие исторические факты. Откройте для себя эволюцию скоростных машин от паровых экипажей до электрокаров.</p>
+                    <div class="hero__actions">
+                        <a class="button button--primary" href="articles.html">Перейти к статьям</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section aria-labelledby = "community-title">
-            <span>[ 04 ] - Мнение сообщества</span>
-            <h2 id="community-title">Что говорят автолюбители</h2>
-            <article>
-                <p>«Платформа — настоящий шедевр для историков. Аналитические чарты и редкие факты о довоенных спорткарах затянули меня на часы.»</p>
-                <h3>Александр В., Коллекционер классики</h3>
-            </article>
-            <article>
-                <p>«Отличная визуализация данных. Наконец-то в одном месте собран структурированный каталог с настолько точными ТТХ машин.»</p>
-                <h3>Мария К., Автомобильный журналист</h3>
-            </article>
+        <section class="brands" aria-labelledby="brand-titles">
+            <div class="container">
+                <div class="brands__intro section-intro section-intro--split">
+                    <div>
+                        <span class="badge"><span class="badge__index">[ 02 ]</span> — Легендарные производители</span>
+                        <h2 class="section-title" id="brand-titles">Великие марки, изменившие мир</h2>
+                    </div>
+                    <p class="section-lead">Исследуйте подробный путь развития каждого бренда, их ключевые триумфы и архивные линейки моделей.</p>
+                </div>
+
+                <!-- Иконки-заглушки; заменить на иконки конкретных брендов при экспорте из Figma -->
+                <div class="brands__list">
+                    <article class="brand-card">
+                        <img src="assets/images/icons/mercedes-benz-256.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">Mercedes-Benz</h3>
+                        <p class="brand-card__meta">EST. 1926</p>
+                    </article>
+
+                    <article class="brand-card">
+                        <img src="assets/images/icons/bmw-256.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">BMW</h3>
+                        <p class="brand-card__meta">EST. 1916</p>
+                    </article>
+
+                    <article class="brand-card">
+                        <img src="assets/images/icons/porsche-256.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">Porsche</h3>
+                        <p class="brand-card__meta">EST. 1931</p>
+                    </article>
+
+                    <article class="brand-card">
+                        <img src="assets/images/icons/ferrari.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">Ferrari</h3>
+                        <p class="brand-card__meta">EST. 1939</p>
+                    </article>
+
+                    <article class="brand-card">
+                        <img src="assets/images/icons/toyota-256.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">Toyota</h3>
+                        <p class="brand-card__meta">EST. 1937</p>
+                    </article>
+
+                    <article class="brand-card">
+                        <img src="assets/images/icons/ford-256.png" class="brand-card__icon" alt="" aria-hidden="true" width="32" height="32">
+                        <h3 class="brand-card__title">Ford</h3>
+                        <p class="brand-card__meta">EST. 1903</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline" aria-labelledby="timeline-title">
+            <div class="container">
+                <div class="timeline__intro section-intro section-intro--center">
+                    <span class="badge"><span class="badge__index">[ 03 ]</span> — Хронология эволюции</span>
+                    <h2 class="section-title" id="timeline-title">Ключевые вехи автомобильной истории</h2>
+                    <p class="section-lead">Пройдите сквозь столетие инноваций с помощью нашей интерактивной таймлайн-карты, запечатлевшей важнейшие прорывы индустрии.</p>
+                </div>
+
+                <div class="timeline__list">
+                    <article class="timeline-card">
+                        <h3 class="timeline-card__year">1886</h3>
+                        <p class="timeline-card__text">Benz Patent-Motorwagen — первый в мире бензиновый автомобиль Карла Бенца с одноцилиндровым двигателем внутреннего сгорания.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <h3 class="timeline-card__year">1908</h3>
+                        <p class="timeline-card__text">Ford Model T — первый массовый и доступный автомобиль конвейерной сборки, буквально поставивший мир на колёса.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <h3 class="timeline-card__year">1961</h3>
+                        <p class="timeline-card__text">Jaguar E-Type — сенсация автосалона в Женеве. Энцо Феррари назвал его самым красивым автомобилем из когда-либо созданных.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <h3 class="timeline-card__year">1997</h3>
+                        <p class="timeline-card__text">Toyota Prius — запуск эпохи экологичного транспорта и первого массового серийного гибридного автомобиля.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="community" aria-labelledby="community-title">
+            <div class="container">
+                <div class="section-intro section-intro--center">
+                    <span class="badge"><span class="badge__index">[ 04 ]</span> — Мнение сообщества</span>
+                    <h2 class="section-title" id="community-title">Что говорят автолюбители</h2>
+                </div>
+
+                <div class="community__list">
+                    <article class="review-card">
+                        <p class="review-card__text">«Платформа — настоящий шедевр для историков. Аналитические чарты и редкие факты о довоенных спорткарах затянули меня на часы.»</p>
+                        <h3 class="review-card__author">Александр В., Коллекционер классики</h3>
+                    </article>
+                    <article class="review-card">
+                        <p class="review-card__text">«Отличная визуализация данных. Наконец-то в одном месте собран структурированный каталог с настолько точными ТТХ машин.»</p>
+                        <h3 class="review-card__author">Мария К., Автомобильный журналист</h3>
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <div>
-            <p>AutoChronic</p>
-            <p>Проект создан для сохранения и популяризации истории автомобильной промышленности, великих инженеров и легендарных изобретений.</p>   
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="site-footer__about">
+                <p class="site-footer__name">AutoChronic</p>
+                <p class="site-footer__text">Проект создан для сохранения и популяризации истории автомобильной промышленности, великих инженеров и легендарных изобретений.</p>
+            </div>
+            <div class="site-footer__bottom">
+                <p class="site-footer__copyright">© 2026 AutoChronic. Все права защищены.</p>
+                <p class="site-footer__tagline">Разработано для любителей автомобильной истории.</p>
+            </div>
         </div>
-        <p>© 2026 AutoChronic. Все права защищены.</p>
     </footer>
 </body>
 </html>
 
-
 <!--добавить адаптив в фигму
 придумать действия для залогиненных пользователей
 добавить форму для регистрации через display none-->
-
-
- 

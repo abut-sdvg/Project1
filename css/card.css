@@ -1,0 +1,116 @@
+.badge {
+  display: inline-block;
+  color: var(--color-text-muted, #a3a7ad);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2, 8px);
+}
+
+.badge__index {
+  color: var(--color-accent, #e8622c);
+}
+
+/* ==========================================================================
+   Section intro — общие заголовки секций
+   ========================================================================== */
+
+.brands,
+.timeline,
+.community {
+  padding-block: var(--space-8, 64px);
+}
+
+.section-title {
+  font-size: var(--font-size-xl, 2rem);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.section-lead {
+  color: var(--color-text-muted, #a3a7ad);
+  max-width: 50ch;
+}
+
+.section-intro {
+  margin-bottom: var(--space-6, 32px);
+}
+
+/* Вариант: заголовок слева, описание справа (главный axis — row) */
+.section-intro--split {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-5, 24px);
+}
+
+/* Вариант: всё по центру, друг под другом */
+.section-intro--center {
+  text-align: center;
+}
+
+.section-intro--center .section-lead {
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   Card grids — бренды / таймлайн / отзывы
+   ========================================================================== */
+
+.brands__list,
+.timeline__list,
+.community__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4, 16px);
+}
+
+.brand-card,
+.timeline-card,
+.review-card {
+  flex: 1 1 220px;
+  background-color: var(--color-surface, #15171b);
+  border: 1px solid var(--color-border, #2a2d33);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-5, 24px);
+}
+
+/* Карточка бренда: иконка-кружок над названием, всё по центру */
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.brand-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-3, 12px);
+  border-radius: 50%;
+  background-color: var(--color-surface-muted, #1c1e23);
+  font-size: var(--font-size-lg, 1.25rem);
+}
+
+.brand-card__title,
+.timeline-card__year,
+.review-card__author {
+  font-size: var(--font-size-lg, 1.25rem);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.brand-card__meta {
+  color: var(--color-accent, #e8622c);
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.timeline-card__text,
+.review-card__text {
+  color: var(--color-text-muted, #a3a7ad);
+  /* Проверка устойчивости: без фиксированной высоты блок свободно растёт
+     под более длинный текст. */
+  overflow-wrap: break-word;
+}

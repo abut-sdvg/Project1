@@ -1,0 +1,51 @@
+/*
+ * Flexbox-задача: hero__inner — flex-контейнер (container).
+ * main axis (главная ось) — горизонтальная (row): hero__content и
+ * hero__media расположены вдоль неё с отступом gap.
+ * cross axis (поперечная ось) — вертикальная: align-items: center
+ * выравнивает оба items по центру этой оси.
+ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-8, 64px);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Затемняющий градиент поверх фото, чтобы текст оставался читаемым */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 11, 13, 0.95) 0%, rgba(10, 11, 13, 0.6) 55%, rgba(10, 11, 13, 0.2) 100%);
+  z-index: -1;
+}
+
+.hero__inner {
+  position: relative;
+}
+
+.hero__content {
+  max-width: 640px;
+}
+
+.hero__title {
+  font-size: var(--font-size-2xl, 2.75rem);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.hero__lead {
+  color: var(--color-text-muted, #a3a7ad);
+  margin-bottom: var(--space-5, 24px);
+}

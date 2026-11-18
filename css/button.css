@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3, 12px) var(--space-5, 24px);
+  border: none;
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+ 
+.button--primary {
+  background-color: var(--color-accent, #e8622c);
+  color: #fff;
+}
+ 
+.button--primary:hover {
+  background-color: var(--color-accent-hover, #d4551f);
+}
+ 
