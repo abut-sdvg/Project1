@@ -1,10 +1,4 @@
-/*
- * Flexbox-задача: hero__inner — flex-контейнер (container).
- * main axis (главная ось) — горизонтальная (row): hero__content и
- * hero__media расположены вдоль неё с отступом gap.
- * cross axis (поперечная ось) — вертикальная: align-items: center
- * выравнивает оба items по центру этой оси.
- */
+/*Стили секции hero*/
 .hero {
   position: relative;
   overflow: hidden;
@@ -23,7 +17,7 @@
   z-index: -2;
 }
 
-/* Затемняющий градиент поверх фото, чтобы текст оставался читаемым */
+/* Затемняющий градиент на фото, чтобы текст оставался читаемым */
 .hero::before {
   content: "";
   position: absolute;

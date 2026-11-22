@@ -19,4 +19,4 @@
 .button--primary:hover {
   background-color: var(--color-accent-hover, #d4551f);
 }
- 
+/* задаются стили кнопки, поведение при наведении*/

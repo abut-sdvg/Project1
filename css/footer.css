@@ -10,6 +10,8 @@
 }
 
 .site-footer__name {
+  font-family: var(--font-display, "Big Shoulders Display", Impact, sans-serif);
+  text-transform: uppercase;
   color: var(--color-text, #f5f5f5);
   font-weight: 600;
   margin-bottom: var(--space-2, 8px);
