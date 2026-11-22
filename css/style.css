@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");/*подключение шрифта: какое семейство, начертания(толщина), возможность замены, пока щрифт грузится*/
+@import url("normalize.css");
+@import url("base.css");
+@import url("header.css");
+@import url("hero.css");
+@import url("card.css");
+@import url("form.css");
+@import url("footer.css");
+@import url("button.css");
